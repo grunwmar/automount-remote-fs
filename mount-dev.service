@@ -1,0 +1,13 @@
+[Unit]
+After=network.service
+After=network-online.target
+
+[Service]
+User=
+RemainAfterExit=true
+ExecStart=/usr/local/bin/dev_mount_run.sh -m 
+ExecStop=/usr/local/bin/dev_mount_run.sh -u
+
+[Install]
+WantedBy=multi-user.target
+
